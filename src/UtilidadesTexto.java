@@ -12,9 +12,9 @@ public class UtilidadesTexto {
         do {
             mostrarMenu();
             opcion = leerOpcion(in);
-        } while (opcion != 3);
+            ejecutarOpcion(opcion, in);
+        } while (opcion != 5);
         in.close();
-        }
     }
 
     public static void mostrarMenu() {
@@ -37,8 +37,16 @@ public class UtilidadesTexto {
     }
 
 
-    public static String verificaPalindromia(String in){
-
+    public static void ejecutarOpcion(int opcion, Scanner in) {
+        switch (opcion) {
+            case 1 -> verificarPalindromia();
+        }
     }
 
+    public static String verificarPalindromia(){
+
+    }
 }
+
+
+

@@ -1,4 +1,6 @@
 
+import jdk.jshell.execution.StreamingExecutionControl;
+
 import java.util.Scanner;
 
 public class UtilidadesTexto {
@@ -53,11 +55,11 @@ public class UtilidadesTexto {
         return "";
     }
 
-    public static String contarVocales(Scanner in) {
+    public static void contarVocales(Scanner in) {
         System.out.println("Ingrese una frase");
         String frase = in.nextLine();
         int numeroVocales = contar(frase);
-        return ("Tu palabre tiene" + numeroVocales + "vocales");
+        System.out.println("Tu frase tiene " + numeroVocales + " vocales");
     }
 
     public static int contar(String frase) {

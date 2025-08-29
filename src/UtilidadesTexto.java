@@ -39,14 +39,50 @@ public class UtilidadesTexto {
 
     public static void ejecutarOpcion(int opcion, Scanner in) {
         switch (opcion) {
-            case 1 -> verificarPalindromia();
+            case 1:
+                verificarPalindromia(in);
+                break;
+            case 2:
+                contarVocales(in);
         }
     }
 
-    public static String verificarPalindromia(){
+    public static String verificarPalindromia(Scanner in) {
+        System.out.println("Ingrese una palabra");
+        String palabra = in.nextLine();
+        return "";
+    }
 
+    public static String contarVocales(Scanner in) {
+        System.out.println("Ingrese una frase");
+        String frase = in.nextLine();
+        int numeroVocales = contar(frase);
+        return ("Tu palabre tiene" + numeroVocales + "vocales");
+    }
+
+    public static int contar(String frase) {
+        int contador = 0;
+        char[] caracteres = frase.toCharArray();
+        for (char c : caracteres) {
+            if (c == 'a') {
+                contador++;
+            }
+            if (c == 'e') {
+                contador++;
+            }
+            if (c == 'i') {
+                contador++;
+            }
+            if (c == 'o') {
+                contador++;
+            }
+            if (c == 'u') {
+                contador++;
+            }
+            ;
+        }
+        return contador;
     }
 }
-
 
 

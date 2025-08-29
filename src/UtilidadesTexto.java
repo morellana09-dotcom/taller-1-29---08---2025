@@ -46,6 +46,16 @@ public class UtilidadesTexto {
                 break;
             case 2:
                 contarVocales(in);
+                break;
+
+            case 3:
+                insciptar(in);
+                break;
+
+            case 4:
+                desinsciptar(in);
+                break;
+
         }
     }
 
@@ -58,6 +68,7 @@ public class UtilidadesTexto {
     public static void contarVocales(Scanner in) {
         System.out.println("Ingrese una frase");
         String frase = in.nextLine();
+        frase = frase.toLowerCase();
         int numeroVocales = contar(frase);
         System.out.println("Tu frase tiene " + numeroVocales + " vocales");
     }
@@ -84,6 +95,39 @@ public class UtilidadesTexto {
             ;
         }
         return contador;
+    }
+    public static void insciptar(Scanner in) {
+        System.out.println("Ingrese un texto a encriptar");
+        String texto = in.nextLine();
+        String cifrado = encriptarSimbolos(texto);
+        System.out.println("Texto encriptado: " + cifrado);
+    }
+
+    public static String encriptarSimbolos(String texto) {
+        String t = texto.toLowerCase();
+        t = t.replace("a", "@")
+                .replace("e", "&")
+                .replace("i", "!")
+                .replace("o", "#")
+                .replace("u", "*");
+        return t;
+    }
+
+    public static void desinsciptar(Scanner in) {
+        System.out.println("Ingrese un texto a desencriptar");
+        String texto = in.nextLine();
+        String claro = desencriptarSimbolos(texto);
+        System.out.println("Texto desencriptado: " + claro);
+    }
+
+    public static String desencriptarSimbolos(String texto) {
+        String t = texto.toLowerCase();
+        t = t.replace("@", "a")
+                .replace("&", "e")
+                .replace("!", "i")
+                .replace("#", "o")
+                .replace("*", "u");
+        return t;
     }
 }
 
